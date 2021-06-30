@@ -21,14 +21,13 @@ export class TaskGroupsComponent implements OnInit {
     let newGroup = new TaskGroup(this.newGroupName);
     this.tasksService.addTaskGroup(newGroup);
     this.taskGroups = this.tasksService.getTaskGroups();
+    this.sortedByName = false;
+    this.sortedByNumber = false;
     this.router.navigate(['groups/'+newGroup.id+"/details"]);
   }
 
   deleteGroup(taskGroup:TaskGroup){
     this.tasksService.removeTaskGroup(taskGroup);
-  }
-  modifyGroup(taskGroup:TaskGroup){
-    console.log("A")
   }
   sortByNumber(){
     if(!this.sortedByNumber){
