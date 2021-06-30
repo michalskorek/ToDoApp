@@ -1,0 +1,25 @@
+<div>
+    <div class="form-control">
+        <label for="name">Rename group: </label>
+        <input type="text" id="name" [(ngModel)]="taskGroup.name" (change)="updateGroupName()" value="{{taskGroup.name}}">
+        <button routerLink="/groups" class="btn btn-primary" style="margin:5px;">back to list</button>
+    </div>
+
+
+<table class="table">
+    <tr>
+        <th valign="top">
+            <h3>Number of tasks: {{taskGroup.userTasks.length}}</h3>
+            <h3>Assigned tasks:</h3>
+            <ul>
+                <li *ngFor="let task of taskGroup.userTasks">
+                    <app-user-task [task]="task" (deleteEmitter)="deleteTask($event)"></app-user-task>
+                </li>
+            </ul>
+        </th>
+        <th>
+            <app-create-usertask [taskGroup]="taskGroup"></app-create-usertask>
+        </th>
+    </tr>
+</table>
+</div>

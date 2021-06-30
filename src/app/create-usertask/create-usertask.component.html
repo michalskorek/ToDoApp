@@ -1,0 +1,32 @@
+<form [formGroup]="userTaskForm" (ngSubmit)="onSubmit()" class="form-group">
+    <h2>Create new task: </h2>
+    <div>
+        <label for="taskname">
+        Name
+        </label>
+        <input id="taskname" type="text" formControlName="name" class="form-control">
+    </div>
+    <div>
+        <label for="deadLine">
+        Deadline
+        </label>
+        <input id="deadLine" type="datetime-local" formControlName="deadLine" class="form-control">
+    </div>
+    <div>
+        <label for="status">
+        Status
+        </label>
+        <select id="status" formControlName="status" class="form-control">
+            <option selected="selected">New</option>
+            <option>In progress</option>
+            <option>Completed</option>
+        </select>
+    </div>
+    <div>
+        <label for="user">
+        User
+        </label>
+        <input id="user" type="text" formControlName="user" class="form-control">
+    </div>
+    <button class="btn btn-success" type="submit">Add</button>
+</form>

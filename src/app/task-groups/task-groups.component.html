@@ -1,0 +1,23 @@
+<p>Add task group:</p>
+    <input type="text" [(ngModel)]="newGroupName" class="form-control">
+    <button (click)="addGroup()" class="btn btn-primary">Add</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><a (click)="sortByName()">Name</a></th>
+      <th scope="col"><a (click)="sortByNumber()">Number of tasks</a></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let taskGroup of taskGroups">
+          <th>{{taskGroup.name}}</th>
+          <th>{{taskGroup.userTasks?.length}}</th>
+          <th><button (click)="deleteGroup(taskGroup)" class="btn btn-danger">Delete</button></th>
+          <th><button routerLink="{{taskGroup.id}}/details" class="btn btn-dark">Modify</button></th>
+      </tr>
+  </tbody>
+</table>
+

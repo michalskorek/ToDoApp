@@ -1,0 +1,6 @@
+<div>
+    <p>Task name: {{task.name}} <button (click)="deleteTask()" class="btn btn-danger">Delete</button></p>
+    <p>Deadline: {{task.deadLine | date:"medium"}}</p>
+    <p>User: {{task.user}}</p>
+    <p>Status: {{task.status}}</p>
+</div>
